@@ -1,7 +1,7 @@
 # Sample Dockerfile by Oskr
 
-# Indicates that the nanoserver image will be used as the base image.
-FROM microsoft/nanoserver
+# Indicates that the ubuntu image will be used as the base image.
+FROM ubuntu
 
 # Metadata indicating an image maintainer.
 LABEL maintainer="otorres@testingsoft.com"
