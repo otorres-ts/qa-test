@@ -1,7 +1,7 @@
 # Sample Dockerfile by Oskr
 
-# Indicates that the windowsservercore image will be used as the base image.
-FROM microsoft/windowsservercore
+# Indicates that the nanoserver image will be used as the base image.
+FROM microsoft/nanoserver
 
 # Metadata indicating an image maintainer.
 LABEL maintainer="otorres@testingsoft.com"
