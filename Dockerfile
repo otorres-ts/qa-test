@@ -1,4 +1,4 @@
-# Sample Dockerfile
+# Sample Dockerfile by Oskr
 
 # Indicates that the windowsservercore image will be used as the base image.
 FROM microsoft/windowsservercore
