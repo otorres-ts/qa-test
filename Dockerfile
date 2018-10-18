@@ -5,7 +5,7 @@
 
 FROM nginx
 
-COPY ./wrapper.sh $HOME
+COPY wrapper.sh /
 
 COPY html /usr/share/nginx/html
 
