@@ -1,0 +1,88 @@
+<html>
+	<head>
+	Hello, This is my first page running in Docker!! <br>
+	</head>
+	
+<body>
+    <br>
+	Things I had to do to be here!! <br><br>
+	<br>
+		<div class="screen">
+		1. Get an account on https://hub.docker.com <br><br>
+		2. Create a repository >> otorres31/qa-test <br><br>
+		3. Link an Account to get Automated Builds (every time the repo has a change an automated build will be triggered), in my case I have linked docker with github >> otorres-ts/qa-test<br><br>
+		4. Download Docker for Windows 8.1 (in my case) >> https://docs.docker.com/toolbox/overview/  <br><br>
+		5. Docker for Windows 10 and above can be found on next link >> https://download.docker.com/win/beta/InstallDocker.msi <br><br>
+		6. Create a Dockerfile in the root of the repository >> this will contain the instructions to be run when building, for example, use ubuntu or ngix for the image. You can see next video for details >> https://www.youtube.com/watch?v=LQjaJINkQXY <br>
+		<br>
+		This could be very complex in my case I did a basic setting.<br><br>
+		<div class="screen">
+			FROM nginx <br>
+
+			COPY wrapper.sh / <br>
+
+			COPY html /usr/share/nginx/html <br>
+
+			RUN chmod +x wrapper.sh <br>
+
+			CMD ["./wrapper.sh"] <br><br>
+		<div>
+		7. Get the latest changes from the docker repository, run next docker command:<br>
+		    $ docker pull otorres31/qa-test<br>
+			Using default tag: latest<br>
+			latest: Pulling from otorres31/qa-test<br>
+			f17d81b4b692: Already exists<br>
+			d5c237920c39: Already exists<br>
+			a381f92f36de: Already exists<br>
+			65f71377f813: Pull complete<br>
+			fc8fad441cb1: Pull complete<br>
+			cbaffe85a177: Pull complete<br>
+			Digest: sha256:b504d60efea7423c209652f17ac9dbac63a5e8c856e0c87c4a7ebc37201a474f<br>
+			Status: Downloaded newer image for otorres31/qa-test:latest <br><br>
+		   This <br><br>
+		8. Run the docker image:<br>
+		   $ docker run --rm otorres31/qa-test<br>
+		   If all goes well you will see >> Nginx is running...<br><br>
+		9. Give a name to the port will be used to run the application:<br>
+		   $ docker run -d -P --name qa-test otorres31/qa-test<br>
+		   You will get an id as response:<br>
+		   4b8fdf4d3c23b96ad68c559b2c7c18a3a6186fe748991de15b75357f206901e3<br><br>
+		10. Get the port was assigned to the application:<br>
+		    $ docker port qa-test<br>
+            You will see something similar to >> 80/tcp -> 0.0.0.0:32770 (in Windows 8 or below IP is not displayed with this command, see next step to get that ip)<br><br>
+		11. Get the ip where assigned in Windows 8 or below:<br>
+		    $ docker-machine ip default<br>
+			You will see something similar to >> 192.168.99.100<br><br>
+		12. Now you have the ip and the pport where application is running.<br><br>
+		13. Go to the browser and go to that ip+port, as in the example above it would be >> http://192.168.99.100:32769/ <br><br>
+		14. If all goes well, you will see the nginx page:
+		    <div class="screen">
+				Welcome to nginx!<br><br>
+
+				If you see this page, the nginx web server is successfully installed and working. Further configuration is required.<br><br>
+
+				For online documentation and support please refer to nginx.org.<br>
+				Commercial support is available at nginx.com.<br>
+
+				Thank you for using nginx.<br><br>
+			<div>
+		15. Now, let's go to another html page we have in the repository:<br>
+		   http://192.168.99.100:32770/Test_formWidgetCSS_production.html <br><br>
+		16. Page should be displayed properly.<br><br>
+		17. Now, go back to my first page in Docker page:<br>
+		    http://192.168.99.100:32770/My_First_Page_In_Docker.html <br><br>
+		18. Deleting the image:<br>
+		    $ docker images<br>
+			$ docker rmi -f <imageId> or <imageName><br><br>
+        19. Deleting the container (where the image lives):<br>
+		    $ docker ps<br>
+			$ docker rm -f <containerId> or <containerName><br><br>
+		20. See next video I have created with this steps >>  <br><br>
+		21. Thank you so much!!<br>
+        
+		
+        	
+		<div>
+	<br>
+</body>
+</html>
