@@ -1,7 +1,0 @@
-STARTING = 'Starting...'
-SUCCESSFULLY_AUTHENTICATE = 'Successfully authenticated'
-SUCCESSFULLY_CREATED_PRACTITIONER = 'Successfully created practitioner {}'
-ERROR_CREATING = 'Error creating {}'
-SUCCESSFULLY_CREATED_PATIENT = 'Successfully created patient {}'
-ERROR_CREATING_CAREPLAN = 'Error creating carePlan'
-SUCCESSFULLY_CREATED_CAREPLAN = 'Successfully created carePlan'

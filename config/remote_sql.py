@@ -1,2 +1,0 @@
-# REMOTE SQL
-REMOTE_SQL = "(LocalDb)\MSSQLLocalDB"
